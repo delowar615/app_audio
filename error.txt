@@ -1,0 +1,41 @@
+=== KOPEYSK ELITE RUST 9.0 - ERROR REPORT ===
+
+COMPILATION CHECK:
+No compilation errors found. The project compiles successfully.
+
+CLIPPY LINTS:
+warning: this `if` statement can be collapsed
+   --> src\main.rs:184:21
+    |
+184 | /                     if ui.add(egui::Button::new("PREV").min_size(egui::vec2(75.0, 35.0))).clicked() {
+185 | |                         if s.settings.cur_idx > 0 { s.settings.cur_idx -= 1; s.should_skip = true; }
+186 | |                     }
+    | |_____________________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#collapsible_if
+    = note: `#[warn(clippy::collapsible_if)]` on by default
+help: collapse nested if block
+    |
+184 ~                     if ui.add(egui::Button::new("PREV").min_size(egui::vec2(75.0, 35.0))).clicked()
+185 ~                         && s.settings.cur_idx > 0 { s.settings.cur_idx -= 1; s.should_skip = true; }
+    |
+
+warning: this `if` statement can be collapsed
+   --> src\main.rs:193:21
+    |
+193 | /                     if ui.add(egui::Button::new("NEXT").min_size(egui::vec2(75.0, 35.0))).clicked() {
+194 | |                         if !s.track_list.is_empty() { s.settings.cur_idx = (s.settings.cur_idx + 1) % s.track_list.len(); s.should_skip = true; }
+195 | |                     }
+    | |_____________________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#collapsible_if
+help: collapse nested if block
+    |
+193 ~                     if ui.add(egui::Button::new("NEXT").min_size(egui::vec2(75.0, 35.0))).clicked()
+194 ~                         && !s.track_list.is_empty() { s.settings.cur_idx = (s.settings.cur_idx + 1) % s.track_list.len(); s.should_skip = true; }
+    |
+
+warning: `kopeysk_elite_rust` (bin "kopeysk_elite_rust") generated 2 warnings (run `cargo clippy --fix --bin "kopeysk_elite_rust"` to apply 2 suggestions)
+
+FORMATTING ISSUES:
+The code does not follow Rust formatting conventions. Run `cargo fmt` to automatically format the code.
