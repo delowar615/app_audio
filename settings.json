@@ -1,5 +1,17 @@
 {
   "vol": 1.0,
-  "cur_idx": 56,
-  "music_folder": "C:/Users/delowar/Music"
+  "cur_idx": 30,
+  "music_folder": "C:/Users/delowar/Music",
+  "eq_gains": [
+    -3.5,
+    2.0,
+    5.0,
+    2.0,
+    -3.0,
+    -15.0,
+    5.5,
+    7.5,
+    11.0,
+    15.0
+  ]
 }
